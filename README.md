@@ -371,11 +371,25 @@ sudo certbot --apache --agree-tos --redirect --hsts --staple-ocsp --email user@e
 if certbot fail then you'll need to install certbot via snap
 
 ```
+sudo apt update
+sudo apt install certbot
+
+or
+
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install certbot
+
+
+or
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install snapd
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-``
+```
 
 Replace user@example.io with your email address and nextcloud.example.io with your Nextcloud domain3.
 
