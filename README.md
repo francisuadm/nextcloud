@@ -244,6 +244,11 @@ sudo curl -sSL https://raw.githubusercontent.com/nextcloud/nextcloudpi/master/in
 ```
 sudo curl -sSL https://raw.githubusercontent.com/xety1337/fast-nextcloud-installation/main/fast_install.sh | sudo bash
 ```
+```
+https://github.com/RashiMrBRD/nextcloud-scr/blob/main/nextcloud-script.sh
+```
+
+
 
 ### use for copying scripts
 ```
