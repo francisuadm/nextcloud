@@ -355,21 +355,37 @@ https://github.com/downtownallday/cloudinabox/tree/master
 
 Sure, I can help you address these issues one by one:
 
-Brute-force throttling: This is a security feature in Nextcloud to protect against brute-force attacks. If your IP address is being throttled and it’s not due to incorrect login attempts, it could be a misconfigured proxy1. You can reset the throttling state by running the following commands2:
+Brute-force throttling: This is a security feature in Nextcloud to protect against brute-force attacks. 
+If your IP address is being throttled and it’s not due to incorrect login attempts, it could be a misconfigured proxy. 
+You can reset the throttling state by running the following commands:
+```
 sudo -u www-data php occ config:system:set auth.bruteforce.protection.enabled --value false --type bool
 sudo -u www-data php occ security:bruteforce:reset 10.17.76.30
+```
 Replace 10.17.76.30 with your IP address. After running these commands, remember to enable the brute-force protection again2.
-HTTP to HTTPS: It’s strongly recommended to set up your server to require HTTPS to ensure the security of your data3. You can use Certbot to obtain a free SSL certificate from Let’s Encrypt3. Here is a command you can use3:
-sudo certbot --apache --agree-tos --redirect --hsts --staple-ocsp --email user@example.io -d nextcloud.example.io
-Replace user@example.io with your email address and nextcloud.example.io with your Nextcloud domain3.
-Maintenance window start time: This is to ensure that resource-intensive background jobs are executed during a time of low usage4. You can set it by adding the following line to your config.php file4:
-'maintenance_window_start' => 1,
-The value 1 stands for the hour when you want the maintenance window to start in UTC time4.
-Missing database indexes: You can add the missing indexes by running the following command5:
-sudo -u www-data php occ db:add-missing-indices
 
+HTTP to HTTPS: It’s strongly recommended to set up your server to require HTTPS to ensure the security of your data3. You can use Certbot to obtain a free SSL certificate from Let’s Encrypt3. Here is a command you can use3:
+```
+sudo certbot --apache --agree-tos --redirect --hsts --staple-ocsp --email user@example.io -d nextcloud.example.io
+```
+Replace user@example.io with your email address and nextcloud.example.io with your Nextcloud domain3.
+
+Maintenance window start time: This is to ensure that resource-intensive background jobs are executed during a time of low usage4. You can set it by adding the following line to your config.php file4:
+```
+'maintenance_window_start' => 1,
+```
+The value 1 stands for the hour when you want the maintenance window to start in UTC time4.
+
+Missing database indexes: You can add the missing indexes by running the following command5:
+```
+sudo -u www-data php occ db:add-missing-indices
+```
 Default phone region: This is required to validate phone numbers in the profile settings without a country code6. You can set it by adding the following line to your config.php file6:
+```
 'default_phone_region' => 'XX',
+```
+
 Replace XX with the appropriate ISO 3166-1 code for your region (for example, US for the United States or GB for the United Kingdom)6.
 Please replace the paths and user names in the commands with the ones applicable to your setup. If you’re not comfortable with these changes, I’d recommend seeking help from a system administrator. Let me know if you need help with anything else!
 
+##
