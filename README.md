@@ -368,6 +368,15 @@ HTTP to HTTPS: It’s strongly recommended to set up your server to require HTTP
 ```
 sudo certbot --apache --agree-tos --redirect --hsts --staple-ocsp --email user@example.io -d nextcloud.example.io
 ```
+if certbot fail then you'll need to install certbot via snap
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install snapd
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+``
+
 Replace user@example.io with your email address and nextcloud.example.io with your Nextcloud domain3.
 
 Maintenance window start time: This is to ensure that resource-intensive background jobs are executed during a time of low usage4. You can set it by adding the following line to your config.php file4:
