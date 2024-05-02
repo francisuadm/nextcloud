@@ -234,3 +234,18 @@ Remember, the version of PHP your server should run depends on your specific req
 
 
 
+
+### TEST bash scripts
+
+```
+sudo curl -sSL https://raw.githubusercontent.com/nextcloud/nextcloudpi/master/install.sh | sudo bash
+```
+
+```
+sudo curl -sSL https://raw.githubusercontent.com/xety1337/fast-nextcloud-installation/main/fast_install.sh | sudo bash
+```
+
+### use for copying scripts
+```
+https://raw.githubusercontent.com/libersoft-org/nextcloud-install/main/install.sh
+```
