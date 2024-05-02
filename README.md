@@ -249,3 +249,8 @@ sudo curl -sSL https://raw.githubusercontent.com/xety1337/fast-nextcloud-install
 ```
 https://raw.githubusercontent.com/libersoft-org/nextcloud-install/main/install.sh
 ```
+
+### look at line 603 for your notes
+```
+https://github.com/Pride1922/Nextcloud-Zero-Touch-installation/blob/main/install.sh
+```
