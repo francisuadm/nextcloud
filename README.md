@@ -247,7 +247,9 @@ sudo curl -sSL https://raw.githubusercontent.com/xety1337/fast-nextcloud-install
 ```
 https://github.com/RashiMrBRD/nextcloud-scr/blob/main/nextcloud-script.sh
 ```
-
+```
+https://github.com/nworldorder/NextCloud-Installer-Script-Debian-11/blob/main/nextcloud-installer.sh
+```
 
 
 ### use for copying scripts
@@ -261,6 +263,9 @@ https://github.com/George-Atmatsidis/Nextcloud-Installation-Script-for-Ubuntu/bl
 ```
 https://github.com/soilah/nextcloud_auto_installer/blob/main/nextcloud_auto.sh
 ```
+
+
+
 
 
 ### look at line 603 for your notes
