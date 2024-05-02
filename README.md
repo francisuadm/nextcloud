@@ -250,7 +250,9 @@ https://github.com/RashiMrBRD/nextcloud-scr/blob/main/nextcloud-script.sh
 ```
 https://github.com/nworldorder/NextCloud-Installer-Script-Debian-11/blob/main/nextcloud-installer.sh
 ```
-
+```
+https://github.com/ReSummit/NextCloud-X-OnlyOffice-Server-Setup-Script/blob/Stable-Branch/NextCloud_Setup.sh
+```
 
 ### use for copying scripts
 ```
