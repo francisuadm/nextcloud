@@ -267,3 +267,12 @@ https://github.com/soilah/nextcloud_auto_installer/blob/main/nextcloud_auto.sh
 ```
 https://github.com/Pride1922/Nextcloud-Zero-Touch-installation/blob/main/install.sh
 ```
+
+
+
+
+### something to check it out
+
+```
+https://github.com/downtownallday/cloudinabox/tree/master
+```
