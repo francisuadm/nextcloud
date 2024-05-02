@@ -249,6 +249,10 @@ sudo curl -sSL https://raw.githubusercontent.com/xety1337/fast-nextcloud-install
 ```
 https://raw.githubusercontent.com/libersoft-org/nextcloud-install/main/install.sh
 ```
+```
+https://github.com/George-Atmatsidis/Nextcloud-Installation-Script-for-Ubuntu/blob/main/install_nextcloud.bash
+```
+
 
 ### look at line 603 for your notes
 ```
