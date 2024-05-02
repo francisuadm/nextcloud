@@ -168,6 +168,71 @@ Install and Configure casaOS and KASM Server: Since casaOS and KASM Server use d
 Remember, always check the official documentation for each software for the most accurate and detailed instructions. Also, ensure your firewall rules are set up correctly to allow traffic through the necessary ports. If you have any more questions, feel free to ask. I’m here to help!
 
 
+# 
+[1]: https://askubuntu.com/questions/1422097/whats-the-right-way-to-uninstall-nextcloud-fron-linux-when-it-was-installed-via ""
+[2]: https://installati.one/install-nextcloud-desktop-debian-12/ ""
+[3]: https://reintech.io/blog/installing-configuring-nextcloud-debian-12 ""
+[4]: https://www.howtoforge.com/how-to-install-nextcloud-on-debian-11/ ""
+#
+Certainly! Let's proceed step by step to uninstall Nextcloud, Apache2, and MariaDB from your Debian 12.5 server. Here are the instructions:
+
+1. **Uninstall Nextcloud**:
+    - First, disable the Apache configuration for Nextcloud:
+        ```bash
+        sudo a2dissite nextcloud
+        sudo systemctl reload apache2
+        ```
+    - Next, remove the Nextcloud directory (assuming it was installed in `/var/www/nextcloud`):
+        ```bash
+        sudo rm -rf /var/www/nextcloud
+        ```
+    - If you used a database for Nextcloud, drop the Nextcloud database (replace `nextcloud` with your actual database name):
+        ```bash
+        sudo mysql -u root -p
+        DROP DATABASE nextcloud;
+        ```
+    - Finally, remove any remaining Nextcloud-related packages:
+        ```bash
+        sudo apt-get purge nextcloud-desktop
+        sudo apt-get autoremove
+        ```
+
+2. **Uninstall Apache2**:
+    - To remove Apache2 and its configuration files:
+        ```bash
+        sudo apt-get purge apache2 apache2-utils
+        sudo apt-get autoremove
+        ```
+
+3. **Uninstall MariaDB**:
+    - Remove MariaDB server and client:
+        ```bash
+        sudo apt-get purge mariadb-server mariadb-client
+        sudo apt-get autoremove
+        ```
+    - Optionally, if you want to remove the database files as well:
+        ```bash
+        sudo rm -rf /var/lib/mysql
+        ```
+
+4. **Clean Up**:
+    - Verify that all related packages and configurations have been removed:
+        ```bash
+        dpkg -l | grep nextcloud
+        dpkg -l | grep apache2
+        dpkg -l | grep mariadb
+        ```
+    - If any residual packages remain, remove them manually.
+
+Remember to replace any specific paths or names with the actual ones you used during installation. After completing these steps, you'll have a clean slate to reinstall Nextcloud and set it up again. If you encounter any issues, feel free to ask for further assistance! 🌟
+
+Source: Conversation with Bing, 4/29/2024
+(1) What's the right way to uninstall Nextcloud fron Linux when it was .... https://askubuntu.com/questions/1422097/whats-the-right-way-to-uninstall-nextcloud-fron-linux-when-it-was-installed-via.
+(2) How To Install nextcloud-desktop on Debian 12 | Installati.one. https://installati.one/install-nextcloud-desktop-debian-12/.
+(3) Installing and Configuring Nextcloud on Debian 12. https://reintech.io/blog/installing-configuring-nextcloud-debian-12.
+(4) How to Install Nextcloud on Debian 11 - HowtoForge. https://www.howtoforge.com/how-to-install-nextcloud-on-debian-11/.
+
+
 
 
 #
