@@ -417,5 +417,9 @@ Please replace the paths and user names in the commands with the ones applicable
 
 
 ```
+sudo crontab -u www-data -e    # add this inside of it: */5 * * * * php -f /var/www/nextcloud/cron.php
+
+
+
 sudo -u www-data php occ config:system:set maintenance_window_start --type=integer --value=1
 ```
