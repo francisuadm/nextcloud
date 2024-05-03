@@ -411,4 +411,11 @@ Default phone region: This is required to validate phone numbers in the profile 
 Replace XX with the appropriate ISO 3166-1 code for your region (for example, US for the United States or GB for the United Kingdom)6.
 Please replace the paths and user names in the commands with the ones applicable to your setup. If you’re not comfortable with these changes, I’d recommend seeking help from a system administrator. Let me know if you need help with anything else!
 
-##
+
+
+#### compile commands
+
+
+```
+sudo -u www-data php occ config:system:set maintenance_window_start --type=integer --value=1
+```
