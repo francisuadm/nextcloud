@@ -430,4 +430,6 @@ nano /etc/mysql/my.cnf
 wait_timeout = 28800
 interactive_timeout = 28800
 
+save it:
+systemctl restart mysql
 ```
