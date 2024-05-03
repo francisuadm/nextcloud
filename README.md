@@ -422,4 +422,12 @@ sudo crontab -u www-data -e    # add this inside of it: */5 * * * * php -f /var/
 
 
 sudo -u www-data php occ config:system:set maintenance_window_start --type=integer --value=1
+
+
+nano /etc/mysql/my.cnf
+
+# this inside:
+wait_timeout = 28800
+interactive_timeout = 28800
+
 ```
