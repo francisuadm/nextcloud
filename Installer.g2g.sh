@@ -114,7 +114,7 @@ echo -e "${GREEN}Setting up Nextcloud database completed successfully${NC}"
 
 #install required packages
 echo -e "${YELLOW}Installing required Nextcloud packages in the background, this may take a while ..${NC}"
-sudo apt install apache2 php php-apcu php-bcmath php-cli php-common php-curl php-gd php-gmp php-imagick php-intl php-mbstring php-mysql php-zip php-xml unzip php-imagick redis php-redis imagemagick cron -y > /dev/null 2>&1 &>> ${LOG}
+sudo apt install apache2 php php-apcu php-bcmath php-cli php-common php-curl php-gd php-gmp php-imagick php-intl php-mbstring php-mysql php-zip php-xml unzip php-imagick redis php-redis imagemagick cron samba smbclient -y > /dev/null 2>&1 &>> ${LOG}
 if [ $? -ne 0 ]; then
     echo -e "${RED}Failed to install required package" 1>&2
     exit 1
@@ -156,8 +156,8 @@ cat > /etc/apache2/sites-available/${NCdomainName}.conf << EOF
 
     Header add Strict-Transport-Security: "max-age=15552000;includeSubdomains"
 
-    ServerAdmin admin@cloud.tt.com
-    ServerName cloud.tt.com
+    ServerAdmin francisuadm@gmail.com
+    ServerName ${NCdomainName}
 
     <Directory "/var/www/${NCdomainName}/">
     Options MultiViews FollowSymlinks
@@ -255,13 +255,13 @@ sudo -u www-data php /var/www/${NCdomainName}/occ config:system:set trusted_doma
 
 #set php recommended Configurations
 echo -e "${YELLOW}Enabling PHP Recommendations for Nextcloud.${NC}"
-sudo sed -i "s:memory_limit = .*:memory_limit = 512M:" $PHP
-sudo sed -i "s:upload_max_filesize = .*:upload_max_filesize = 200M:" $PHP
+sudo sed -i "s:memory_limit = .*:memory_limit = 1024M:" $PHP
+sudo sed -i "s:upload_max_filesize = .*:upload_max_filesize = 1024M:" $PHP
 sudo sed -i "s:max_execution_time = .*:max_execution_time = 360:" $PHP
-sudo sed -i "s:post_max_size = .*:post_max_size = 200M:" $PHP
+sudo sed -i "s:post_max_size = .*:post_max_size = 1024M:" $PHP
 sudo sed -i "s:;opcache.interned_strings_buffer=.*:opcache.interned_strings_buffer=16:" $PHP
-sudo sed -i "s:;opcache.max_accelerated_files=.*:opcache.max_accelerated_files=10000:" $PHP
-sudo sed -i "s:;opcache.memory_consumption=.*:opcache.memory_consumption=128:" $PHP
+sudo sed -i "s:;opcache.max_accelerated_files=.*:opcache.max_accelerated_files=150000:" $PHP
+sudo sed -i "s:;opcache.memory_consumption=.*:opcache.memory_consumption=512:" $PHP
 sudo sed -i "s:;opcache.save_comments=.*:opcache.save_comments=1:" $PHP
 sudo sed -i "s:;opcache.revalidate_freq=.*:opcache.revalidate_freq=1:" $PHP
 #add and fix for memcache local
@@ -303,4 +303,4 @@ sudo rm -rf mysql_secure_installation.sql
 echo""
 
 
-echo -e "${BLUE}Nextcloud installation and setup complete\n- Visit: https://${NCIP} or https://${NCdomainName}\n Admin username: ${NCAdmin}\n Admin password: ${NCPass}\n\n Database root user password: ${mysqlRootPwd} \n Database User: ${DbUser} \n Database user password: ${DbPwd}\n\n ${GREEN}Thank you for using my script and being part of the geek2gether community.${NC}"
+echo -e "${BLUE}Nextcloud installation and setup complete\n- Visit: https://${NCIP} or https://${NCdomainName}\n Admin username: ${NCAdmin}\n Admin password: ${NCPass}\n\n Database root user password: ${mysqlRootPwd} \n Database User: ${DbUser} \n Database user password: ${DbPwd}\n\n ${GREEN}Thank you for using my script.${NC}"
