@@ -9,7 +9,7 @@ nexcloud_link="https://download.nextcloud.com/server/releases/nextcloud-28.0.5.t
 #install all requiered packages
 apt update
 apt upgrade -y
-apt install apache2 php postgresql php-curl php-gd php-mbstring php-zip php-bz2 php-intl php-xml php-gmp php-apcu php-bcmath php-imap php-ldap php-mysql php-fpm php-cli php-pgsql php-igbinary smbclient -y
+apt imagemagick php8.2-imagick memcached libmemcached-tools php8.2-memcached php8.2-apcu mariadb-server php8.2-gd php8.2-mysql php8.2-curl php8.2-mbstring php8.2-intl php8.2-gmp php8.2-bcmath php8.2-xml php8.2-zip unzip smbclient php8.2-bz2* samba -y
 
 #download nextcloud
 cd /var/www/
