@@ -301,9 +301,10 @@ sudo -u www-data php /var/www/${NCdomainName}/occ config:system:set memcache.dis
 sudo -u www-data php /var/www/${NCdomainName}/occ config:system:set redis host --value="localhost"
 sudo -u www-data php /var/www/${NCdomainName}/occ config:system:set redis port --value="6379"
 sudo -u www-data php /var/www/${NCdomainName}/occ config:system:set redis timeout --value="0.0"
-#add uly
+#add uly:
+echo -e "${YELLOW}Setting default phone region to US. ${NC}"
 sudo -u www-data php /var/www/${NCdomainName}/occ config:system:set default_phone_region --value="US"
-
+#end line uly:
 #configure theming
 sudo -u www-data php /var/www/${NCdomainName}/occ theming:config name ${NCdomainName}
 sudo -u www-data php /var/www/${NCdomainName}/occ theming:config url https://${NCdomainName}
