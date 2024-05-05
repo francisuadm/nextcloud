@@ -2,6 +2,25 @@
 ####################################
 # Nextcloud Install script.
 ####################################
+#           NextCloud Installer Script #
+#   Requires: bash, mv, rm, tr, grep, sed, curl/wget, tar, smartmontools, parted, ntfs-3g, net-tools
+#
+#   This script installs Nextcloud to your system.
+#   Usage:
+#
+#   wget https://raw.githubusercontent.com/francisuadm/nextcloud/main/Installer.g2g.sh
+#
+#   sudo chmod +x Installer.g2g.sh
+#
+#   sudo ./Installer.g2g.sh
+#
+#   In automated environments, you may want to run as root.
+#   If using curl, we recommend using the -fsSL flags.
+#
+#   This only work on  Linux systems. Please
+#   open an issue if you notice any bugs.
+
+
 # https://www.youtube.com/watch?v=SC3sjzLW5Bg&t=277
 # Check if user is root or sudo
 if ! [ $( id -u ) = 0 ]; then
@@ -114,7 +133,7 @@ echo -e "${GREEN}Setting up Nextcloud database completed successfully${NC}"
 
 #install required packages
 echo -e "${YELLOW}Installing required Nextcloud packages in the background, this may take a while ..${NC}"
-sudo apt install apache2 php php-apcu php-bcmath php-cli php-common php-curl php-gd php-gmp php-imagick php-intl php-mbstring php-mysql php-zip php-xml unzip php-imagick redis php-redis imagemagick cron samba smbclient -y > /dev/null 2>&1 &>> ${LOG}
+sudo apt install apache2 php php-apcu php-bcmath php-cli php-common php-curl php-gd php-gmp php-imagick php-intl php-mbstring php-mysql php-zip php-xml unzip php-imagick redis php-redis imagemagick cron smbclient -y > /dev/null 2>&1 &>> ${LOG}
 if [ $? -ne 0 ]; then
     echo -e "${RED}Failed to install required package" 1>&2
     exit 1
