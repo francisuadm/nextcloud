@@ -133,7 +133,8 @@ echo -e "${GREEN}Setting up Nextcloud database completed successfully${NC}"
 
 #install required packages
 echo -e "${YELLOW}Installing required Nextcloud packages in the background, this may take a while ..${NC}"
-sudo apt install apache2 php php-apcu php-bcmath php-cli php-common php-curl php-gd php-gmp php-imagick php-intl php-mbstring php-mysql php-zip php-xml unzip php-imagick redis php-redis imagemagick cron smbclient -y > /dev/null 2>&1 &>> ${LOG}
+#sudo apt install apache2 php php-apcu php-bcmath php-cli php-common php-curl php-gd php-gmp php-imagick php-intl php-mbstring php-mysql php-zip php-xml unzip php-imagick redis php-redis imagemagick cron smbclient -y > /dev/null 2>&1 &>> ${LOG}
+sudo apt-get install imagemagick php8.2-imagick memcached libmemcached-tools php8.2-memcached php8.2-apcu mariadb-server php8.2-gd php8.2-mysql php8.2-curl php8.2-mbstring php8.2-intl php8.2-gmp php8.2-bcmath php8.2-xml php8.2-zip unzip smbclient php8.2-bz2 -y > /dev/null 2>&1 &>> ${LOG}
 if [ $? -ne 0 ]; then
     echo -e "${RED}Failed to install required package" 1>&2
     exit 1
