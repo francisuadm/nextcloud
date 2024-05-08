@@ -233,8 +233,8 @@ Source: Conversation with Bing, 4/29/2024
 (4) How to Install Nextcloud on Debian 11 - HowtoForge. https://www.howtoforge.com/how-to-install-nextcloud-on-debian-11/.
 
 
-
-
+# Here another instruction to try and follow.
+https://edywerder.ch/how-to-install-nextcloud-on-proxmox-with-ubuntu/
 #
 ### Extra Notes:
 
