@@ -349,7 +349,7 @@ set -x
 prepare_system
 prepare_db
 prepare_nextcloud
-install_nextcloud_plugins
+# install_nextcloud_plugins
 set_php_fpm
 set_https_certs
 set_nginx
