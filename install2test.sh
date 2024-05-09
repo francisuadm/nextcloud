@@ -42,7 +42,7 @@ MYSQL_SCRIPT
 echo "The database for Nextcloud has been configured."
 
 # Request Nextcloud directory path and server name
-read -p "Enter the full path to the Nextcloud directory (ex: /var/www/html/nextcloud): " nextcloud_path
+read -p "Enter the full path to the Nextcloud directory (ex: /var/www/nextcloud): " nextcloud_path
 read -p "Enter the server name for Nextcloud (ex: cloud.example.net): " server_name
 
 # Configuring VirtualHost Apache for Nextcloud
@@ -99,7 +99,7 @@ sudo a2ensite nextcloud.conf
 sudo systemctl restart apache2
 
 # Installing additional PHP modules for Nextcloud
-sudo apt-get install -y php-gmp php-bcmath php-imagick
+sudo apt-get install -y php-gmp php-bcmath php-imagick smbclient php-smbclient
 sudo phpenmod gmp
 sudo phpenmod bcmath
 sudo phpenmod imagick
