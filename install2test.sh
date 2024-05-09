@@ -16,7 +16,7 @@ sudo apt update
 # PHP 8.3 Installation and Necessary Modules
 sudo apt install -y php8.3 php8.3-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
 
-# Installation d'Apache et configuration pour PHP 8.3
+# Installation of Apache and configuration for PHP 8.3
 sudo apt install -y apache2 libapache2-mod-php8.3
 
 # Installation de MariaDB
@@ -26,8 +26,8 @@ sudo apt -y install mariadb-server mariadb-client
 sudo mysql_secure_installation
 
 # Prompts the user to enter the database username and password
-read -p "Enter username for Nextcloud database: " dbuser
-read -sp "Enter the password for the Nextcloud database: " dbpass
+read -p "Enter username for Nextcloud database: (ex: nextcloud): " dbuser
+read -sp "Enter the password for the Nextcloud database: (ex: nextcloud): " dbpass
 echo
 
 # Database configuration for Nextcloud
