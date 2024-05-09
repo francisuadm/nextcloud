@@ -2,8 +2,8 @@
 #!/bin/bash
 
 # Updating packages
-sudo apt update
-sudo apt upgrade -y
+apt update
+apt upgrade -y
 
 # Installing Necessary Dependencies
 apt install -y lsb-release apt-transport-https ca-certificates software-properties-common wget sudo
