@@ -433,3 +433,7 @@ interactive_timeout = 28800
 save it:
 systemctl restart mysql
 ```
+
+
+# HowTo: Setup Nextcloud Talk with TURN server
+[URL](https://help.nextcloud.com/t/howto-setup-nextcloud-talk-with-turn-server/30794)
