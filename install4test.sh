@@ -38,7 +38,7 @@ NEXTCLOUDADMINUSERPASSWORD=$(openssl rand -hex 16)
 #    Nextcloud < 24 is not compatible with PHP8.1
 #    if less than Nextcloud 24, set PHPVERSION="8.0"
 NCRELEASE="latest.tar.bz2"
-PHPVERSION="8.1"
+PHPVERSION="8.2"
 # D: Ihre Nextcloud Domain ohne(!) https
 #    Wird der Parameter LETSENCRYPT="y" gesetzt
 #    so werden TLS Zertifikate von dieser Domain
@@ -47,7 +47,7 @@ PHPVERSION="8.1"
 #    If the parameter LETSENCRYPT="y" is set
 #    ssl/tls certificates will be requested
 #    and embedded from Let's Encrypt
-NEXTCLOUDDNS="ihre.domain.de"
+NEXTCLOUDDNS="nc.ulynetwork.com"
 # Let'sEncrypt-SSL/TLS: [y|n]
 # D: Sollen Zertifikate von LetsEncrypt eingerichtet werden?
 #    LETSENCRYPT="y" <- inkl. automat. Erneuerungen
