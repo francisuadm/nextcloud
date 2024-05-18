@@ -1,5 +1,7 @@
 #!/bin/bash
 ####################################
+# Uly this is your current nc.ulynetwork.com
+# .31 5-17-2024
 # Nextcloud Install script.
 ####################################
 #           NextCloud Installer Script #
